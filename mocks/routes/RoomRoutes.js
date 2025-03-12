@@ -1,7 +1,7 @@
 const apiVersion = require("./apiVersion");
 
-const setupRoomRoutes = (server, db) => {
-  server.get(apiVersion + "/rooms?", (req, res) => {
+const RoomRoutes = (server, db) => {
+  server.get(apiVersion + "/rooms", (req, res) => {
     const allRooms = db.get("rooms").value();
     if (req.query["after"] === "0") {
       res.json({ rooms: allRooms.slice(0, 10) });
@@ -21,4 +21,4 @@ const setupRoomRoutes = (server, db) => {
   });
 };
 
-module.exports = setupRoomRoutes;
+module.exports = RoomRoutes;

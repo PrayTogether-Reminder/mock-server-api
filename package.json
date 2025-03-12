@@ -1,0 +1,8 @@
+{
+  "scripts":{
+    "start" : "node ./mocks/server.js"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}
