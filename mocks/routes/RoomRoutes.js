@@ -3,6 +3,7 @@ const apiVersion = require("./apiVersion");
 const RoomRoutes = (server, db) => {
   server.get(apiVersion + "/rooms", (req, res) => {
     const allRooms = db.get("rooms").value();
+    //return res.json({rooms:[]});
     if (req.query["after"] === "0") {
       res.json({ rooms: allRooms.slice(0, 10) });
     }
@@ -17,7 +18,7 @@ const RoomRoutes = (server, db) => {
   });
 
   server.post(apiVersion + "/rooms/:roomId/notification", (req, res) => {
-    res.json({});
+    res.json({rooms:[]});
   });
 };
 

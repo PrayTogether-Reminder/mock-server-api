@@ -3,6 +3,7 @@ const apiVersion = require("./apiVersion");
 const PrayerTitleRoutes = (server, db) => {
   server.get(apiVersion + "/prayers", (req, res) => {
     const allPrayers = db.get("prayerTitles").value();
+    //return res.json({prayerTitles: []});
 
     if (!req.query["after"] || req.query["after"] === "0") {
       res.json({ prayerTitles: allPrayers.slice(0, 7) });
