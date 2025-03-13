@@ -19,7 +19,7 @@ server.use(router);
 
 const PORT = 3000;
 server
-  .listen(PORT, () => {
+  .listen(PORT, '0.0.0.0',() => {
     console.log(`JSON Server is running on port ${PORT}`);
   })
   .on("error", (err) => {
