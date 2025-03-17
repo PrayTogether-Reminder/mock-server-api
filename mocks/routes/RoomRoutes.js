@@ -18,7 +18,12 @@ const RoomRoutes = (server, db) => {
   });
 
   server.post(apiVersion + "/rooms/:roomId/notification", (req, res) => {
-    res.json({rooms:[]});
+    res.json({ rooms: [] });
+  });
+
+  server.get(apiVersion + "/rooms/:roomId/members", (req, res) => {
+    const members = db.get("roomMembers");
+    res.json({ members });
   });
 };
 
