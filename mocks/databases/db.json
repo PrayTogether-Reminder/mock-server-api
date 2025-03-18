@@ -320,5 +320,8 @@
       "id": 24,
       "name": "홍단비"
     }
-  ]
+  ],
+  "roomInvitationMessage": {
+    "message": "초대를 완료했습니다."
+  }
 }
