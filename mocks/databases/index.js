@@ -2,6 +2,7 @@ const roomsData = require("./domains/rooms")();
 const prayerTitlesData = require("./domains/prayerTitles")();
 const roomMembersData = require("./domains/roomMembers")();
 const roomInvitationMessage = require("./domains/roomInvitations")();
+const prayersMessage = require("./domains/prayers")();
 
 module.exports = () => {
   return {
@@ -9,5 +10,6 @@ module.exports = () => {
     prayerTitles: prayerTitlesData.prayerTitles,
     roomMembers: roomMembersData.members,
     roomInvitationMessage: { message: roomInvitationMessage.message },
+    prayersMessage: { message: prayersMessage.message },
   };
 };
