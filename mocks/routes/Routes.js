@@ -5,7 +5,7 @@ const setupPrayersRoutes = require("./prayersRoutes");
 
 const setupRoutes = (server, db) => {
   setupRoomRoutes(server, db);
-  setupPrayerTitleRoutes(server, db);
+  // setupPrayerTitleRoutes(server, db);
   setupInvitationRoutes(server, db);
   setupPrayersRoutes(server, db);
 };
