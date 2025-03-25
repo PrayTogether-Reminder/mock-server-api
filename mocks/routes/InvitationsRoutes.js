@@ -1,6 +1,6 @@
 const apiVersion = require("./apiVersion");
 
-const RoomInvitationRoutes = (server, db) => {
+const InvitationsRoutes = (server, db) => {
   server.post(apiVersion + "/invitations", (req, res) => {
     const roomId = req.body["roomId"];
     const email = req.body["email"];
@@ -15,8 +15,9 @@ const RoomInvitationRoutes = (server, db) => {
     }
 
     const message = db.get("roomInvitationMessage").value();
+    console.log(message);
     return res.json(message);
   });
 };
 
-module.exports = RoomInvitationRoutes;
+module.exports = InvitationsRoutes;
