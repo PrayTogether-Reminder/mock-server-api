@@ -324,8 +324,11 @@
   "roomInvitationMessage": {
     "message": "초대를 완료했습니다."
   },
-  "prayersMessage": {
-    "message": "기도 제목을 저장을 완료했습니다."
+  "prayersCreationMessage": {
+    "message": "기도 제목 저장을 완료했습니다."
+  },
+  "prayersUpdateMessage": {
+    "message": "기도 제목 변경을 완료했습니다."
   },
   "prayersContents": [
     {

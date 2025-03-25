@@ -2,7 +2,8 @@ const roomsData = require("./domains/rooms")();
 const prayerTitlesData = require("./domains/prayerTitles")();
 const roomMembersData = require("./domains/roomMembers")();
 const roomInvitationMessage = require("./domains/roomInvitations")();
-const prayersMessage = require("./domains/prayers")();
+const prayersCreationMessage = require("./domains/prayerCreation")();
+const prayersUpdateMessage = require("./domains/prayerUpdate")();
 const prayersContents = require("./domains/prayerContents")();
 
 module.exports = () => {
@@ -11,7 +12,8 @@ module.exports = () => {
     prayerTitles: prayerTitlesData.prayerTitles,
     roomMembers: roomMembersData.members,
     roomInvitationMessage: { message: roomInvitationMessage.message },
-    prayersMessage: { message: prayersMessage.message },
+    prayersCreationMessage: { message: prayersCreationMessage.message },
+    prayersUpdateMessage: { message: prayersUpdateMessage.message },
     prayersContents: prayersContents.prayerContents,
   };
 };

@@ -17,7 +17,7 @@ const prayersRoutes = (server, db) => {
     }
   });
 
-  // 기도 제목 작성
+  // 기도 제목&내용 작성
   server.post(apiVersion + "/prayers", (req, res) => {
     const prayers = req.body["prayers"];
     const title = prayers["title"];
@@ -27,7 +27,7 @@ const prayersRoutes = (server, db) => {
     console.log("title=" + title);
     console.log("contents=" + prettyContents);
 
-    const message = db.get("prayersMessage").value();
+    const message = db.get("prayersCreationMessage").value();
     return res.json(message);
   });
 
@@ -36,6 +36,20 @@ const prayersRoutes = (server, db) => {
     // const titleId = req.titleId;
     const contents = db.get("prayersContents").value();
     return res.json({ prayerContents: contents });
+  });
+
+  // 기도 제목&내용 변경
+  server.put(apiVersion + "/prayers/:titleId", (req, res) => {
+    const prayers = req.body["prayers"];
+    const title = prayers["title"];
+    const contents = prayers.contents;
+
+    const prettyContents = JSON.stringify(contents, null, 2);
+    console.log("title=" + title);
+    console.log("contents=" + prettyContents);
+
+    const message = db.get("prayersUpdateMessage").value();
+    return res.json(message);
   });
 };
 
