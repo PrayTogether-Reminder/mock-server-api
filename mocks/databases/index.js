@@ -6,6 +6,8 @@ const prayersCreationMessage = require("./domains/prayerCreation")();
 const prayersUpdateMessage = require("./domains/prayerUpdate")();
 const prayersContents = require("./domains/prayerContents")();
 const prayerCompletionMessage = require("./domains/prayerCompletion")();
+const roomCreationMessage = require("./domains/roomCreation")();
+const roomDeletionMessage = require("./domains/roomDeletion")();
 
 module.exports = () => {
   return {
@@ -17,5 +19,7 @@ module.exports = () => {
     prayersUpdateMessage: { message: prayersUpdateMessage.message },
     prayersContents: prayersContents.prayerContents,
     prayerCompletionMessage: { message: prayerCompletionMessage.message },
+    roomCreationMessage: { message: roomCreationMessage.message },
+    roomDeletionMessage: { message: roomDeletionMessage.message },
   };
 };

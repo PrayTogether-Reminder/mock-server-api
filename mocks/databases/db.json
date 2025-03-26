@@ -394,5 +394,11 @@
   ],
   "prayerCompletionMessage": {
     "message": "기도 알림을 완료했습니다."
+  },
+  "roomCreationMessage": {
+    "message": "기도방을 생성했습니다."
+  },
+  "roomDeletionMessage": {
+    "message": "기도방을 삭제했습니다."
   }
 }
