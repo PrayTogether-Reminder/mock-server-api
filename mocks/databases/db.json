@@ -400,5 +400,10 @@
   },
   "roomDeletionMessage": {
     "message": "기도방을 삭제했습니다."
+  },
+  "profileData": {
+    "id": 1,
+    "name": "김창현",
+    "email": "test@test.com"
   }
 }

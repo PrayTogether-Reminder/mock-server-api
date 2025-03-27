@@ -8,6 +8,7 @@ const prayersContents = require("./domains/prayerContents")();
 const prayerCompletionMessage = require("./domains/prayerCompletion")();
 const roomCreationMessage = require("./domains/roomCreation")();
 const roomDeletionMessage = require("./domains/roomDeletion")();
+const profileData = require("./domains/profile")();
 
 module.exports = () => {
   return {
@@ -21,5 +22,10 @@ module.exports = () => {
     prayerCompletionMessage: { message: prayerCompletionMessage.message },
     roomCreationMessage: { message: roomCreationMessage.message },
     roomDeletionMessage: { message: roomDeletionMessage.message },
+    profileData: {
+      id: profileData.id,
+      name: profileData.name,
+      email: profileData.email,
+    },
   };
 };
