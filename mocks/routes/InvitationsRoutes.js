@@ -1,6 +1,7 @@
 const apiVersion = require("./apiVersion");
 
 const InvitationsRoutes = (server, db) => {
+  // 기도방 초대
   server.post(apiVersion + "/invitations", (req, res) => {
     const roomId = req.body["roomId"];
     const email = req.body["email"];
@@ -17,6 +18,13 @@ const InvitationsRoutes = (server, db) => {
     const message = db.get("roomInvitationMessage").value();
     console.log(message);
     return res.json(message);
+  });
+
+  // 초대 목록 조회
+  server.get(apiVersion + "/invitations", (req, res) => {
+    const invitations = db.get("invitations").value();
+    console.log(JSON.stringify(invitations, null, 2));
+    return res.json({ invitations });
   });
 };
 

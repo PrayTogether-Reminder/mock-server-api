@@ -9,6 +9,7 @@ const prayerCompletionMessage = require("./domains/prayerCompletion")();
 const roomCreationMessage = require("./domains/roomCreation")();
 const roomDeletionMessage = require("./domains/roomDeletion")();
 const profileData = require("./domains/profile")();
+const invitationsData = require("./domains/invitations")();
 
 module.exports = () => {
   return {
@@ -27,5 +28,6 @@ module.exports = () => {
       name: profileData.name,
       email: profileData.email,
     },
+    invitations: invitationsData.invitations,
   };
 };
