@@ -24,7 +24,6 @@ const InvitationsRoutes = (server, db) => {
   server.get(apiVersion + "/invitations", (req, res) => {
     // return res.json({ invitations: [] });
     const invitations = db.get("invitations").value();
-    console.log(JSON.stringify(invitations, null, 2));
     return res.json({ invitations });
   });
 
