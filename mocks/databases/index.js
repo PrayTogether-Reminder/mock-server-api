@@ -10,6 +10,8 @@ const roomCreationMessage = require("./domains/roomCreation")();
 const roomDeletionMessage = require("./domains/roomDeletion")();
 const profileData = require("./domains/profile")();
 const invitationsData = require("./domains/invitations")();
+const invitationAcceptMessage = require("./domains/invitationAccept")();
+const invitationRejectMessage = require("./domains/invitationReject")();
 
 module.exports = () => {
   return {
@@ -29,5 +31,7 @@ module.exports = () => {
       email: profileData.email,
     },
     invitations: invitationsData.invitations,
+    invitationAcceptMessage: { message: invitationAcceptMessage.message },
+    invitationRejectMessage: { message: invitationRejectMessage.message },
   };
 };

@@ -442,5 +442,11 @@
       "roomDescription": "매일 새벽 5시 기도회",
       "createdTime": "2025-03-28T05:00:00.001Z"
     }
-  ]
+  ],
+  "invitationAcceptMessage": {
+    "message": "초대를 수락했습니다."
+  },
+  "invitationRejectMessage": {
+    "message": "초대를 거절했습니다."
+  }
 }

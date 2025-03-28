@@ -33,7 +33,7 @@ const prayersRoutes = (server, db) => {
 
   // 기도 내용 조회
   server.get(apiVersion + "/prayers/:titleId/contents", (req, res) => {
-    // const titleId = req.titleId;
+    // const titleId = req.params.titleId;
     const contents = db.get("prayersContents").value();
     return res.json({ prayerContents: contents });
   });
