@@ -19,10 +19,12 @@ const prayersRoutes = (server, db) => {
 
   // 기도 제목&내용 작성
   server.post(apiVersion + "/prayers", (req, res) => {
+    const roomId = req.body["roomId"];
     const title = req.body["title"];
     const contents = req.body["contents"];
 
     const jsonContents = JSON.stringify(contents, null, 2);
+    console.log("roomId=" + roomId);
     console.log("title=" + title);
     console.log("contents=" + jsonContents);
 
