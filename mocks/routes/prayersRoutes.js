@@ -19,13 +19,12 @@ const prayersRoutes = (server, db) => {
 
   // 기도 제목&내용 작성
   server.post(apiVersion + "/prayers", (req, res) => {
-    const prayers = req.body["prayers"];
-    const title = prayers["title"];
-    const contents = prayers.contents;
+    const title = req.body["title"];
+    const contents = req.body["contents"];
 
-    const prettyContents = JSON.stringify(contents, null, 2);
+    const jsonContents = JSON.stringify(contents, null, 2);
     console.log("title=" + title);
-    console.log("contents=" + prettyContents);
+    console.log("contents=" + jsonContents);
 
     const message = db.get("prayersCreationMessage").value();
     return res.json(message);
@@ -40,13 +39,12 @@ const prayersRoutes = (server, db) => {
 
   // 기도 제목&내용 변경
   server.put(apiVersion + "/prayers/:titleId", (req, res) => {
-    const prayers = req.body["prayers"];
-    const title = prayers["title"];
-    const contents = prayers.contents;
+    const title = req.body["title"];
+    const contents = req.body["contents"];
 
-    const prettyContents = JSON.stringify(contents, null, 2);
+    const jsonContents = JSON.stringify(contents, null, 2);
     console.log("title=" + title);
-    console.log("contents=" + prettyContents);
+    console.log("contents=" + jsonContents);
 
     const message = db.get("prayersUpdateMessage").value();
     return res.json(message);
