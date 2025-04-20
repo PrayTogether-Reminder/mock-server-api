@@ -51,6 +51,17 @@ const prayersRoutes = (server, db) => {
     const message = db.get("prayersUpdateMessage").value();
     return res.json(message);
   });
+
+  // 기도 완료 + 알림
+  server.post(apiVersion + "/prayers/:titleId/completion", (req, res) => {
+    const titleId = req.params.titleId;
+    const roomId = req.body.roomId;
+    console.log(
+      "titldId=" + titleId + " roomId=" + roomId + " PRAYER_COMPLETION"
+    );
+    const message = db.get("prayerCompletionMessage");
+    res.json(message);
+  });
 };
 
 module.exports = prayersRoutes;
