@@ -5,6 +5,14 @@ const RoomsRoutes = (server, db) => {
   server.get(apiVersion + "/rooms", (req, res) => {
     const allRooms = db.get("rooms").value();
     //return res.json({rooms:[]});
+
+    if (req.query.after === undefined) {
+      return res.status(400).json({
+        status: "error",
+        message: "쿼리 파라미터 'after'가 필요합니다.",
+      });
+    }
+
     if (req.query["after"] === "0") {
       res.json({ rooms: allRooms.slice(0, 10) });
     }
